@@ -1,0 +1,21 @@
+{
+  "name": "elm-pages-app",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "start-elm": "elm-pages dev",
+    "browser": "browser-sync start --proxy \"localhost:1234\" --files \"public/*.css\" ",
+    "start": "concurrently \"npm run start-elm\" \"npm run tw\" \"npm run browser\"",
+    "tw": "tailwindcss -i ./tailwind/input.css -o ./public/tw.css --watch",
+    "build": "elm-pages build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "concurrently": "^6.5.1",
+    "elm-optimize-level-2": "0.2.3",
+    "elm-pages": "2.1.10",
+    "elm-review": "^2.5.5",
+    "elm-tooling": "^1.4.0",
+    "tailwindcss": "^3.0.6"
+  },
+  "dependencies": {}
+}
